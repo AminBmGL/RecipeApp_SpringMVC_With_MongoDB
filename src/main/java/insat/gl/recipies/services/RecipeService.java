@@ -6,11 +6,11 @@ import insat.gl.recipies.commands.RecipeCommand;
 import insat.gl.recipies.domain.Recipe;
 
 public interface RecipeService {
-	Recipe findById(Long l);
+	Recipe findById(String l);
 	Set<Recipe> getRecipes();
-    RecipeCommand findCommandById(Long l);
+    RecipeCommand findCommandById(String l);
 	RecipeCommand saveRecipeCommand(RecipeCommand command);
-    void deleteById(Long idToDelete);
+    void deleteById(String idToDelete);
 
 	
 }

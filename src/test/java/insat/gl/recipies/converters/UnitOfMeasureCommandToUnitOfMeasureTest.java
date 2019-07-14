@@ -13,7 +13,7 @@ import insat.gl.recipies.domain.UnitOfMeasure;
 public class UnitOfMeasureCommandToUnitOfMeasureTest {
 
     public static final String DESCRIPTION = "description";
-    public static final Long LONG_VALUE = new Long(1L);
+    public static final String LONG_VALUE = new String("54");
 
     UnitOfMeasureCommandToUnitOfMeasure converter;
 

@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import insat.gl.recipies.domain.UnitOfMeasure;
 
-public interface UnitOfMeasureRepository extends CrudRepository<UnitOfMeasure, Long> {
+public interface UnitOfMeasureRepository extends CrudRepository<UnitOfMeasure, String> {
 
 	Optional<UnitOfMeasure> findByDescription(String description);
 }

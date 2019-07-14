@@ -3,9 +3,14 @@ package insat.gl.recipies.domain;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class Recipe {
     
-	
+	@Id 
     private String id;
     private String description;
     private Integer prepTime;
@@ -16,14 +21,6 @@ public class Recipe {
     
     private String directions;
     
-    public Set<Category> getCategories() {
-		return categories;
-	}
-
-	public void setCategories(Set<Category> categories) {
-		this.categories = categories;
-	}
-
     private Difficulty difficulty;
     
     
@@ -31,19 +28,23 @@ public class Recipe {
     
     private Notes notes;
 
-    public Difficulty getDifficulty() {
-		return difficulty;
-	}
-
-	public void setDifficulty(Difficulty difficulty) {
-		this.difficulty = difficulty;
-	}
+    
 
     private Set<Ingredient> ingredients = new HashSet<>();
     
+    @DBRef
     private Set<Category> categories = new HashSet<>();
 
 	
+    
+	public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+    
     public Set<Ingredient> getIngredients() {
 		return ingredients;
 	}
@@ -52,14 +53,22 @@ public class Recipe {
 		this.ingredients = ingredients;
 	}
 
-	public String getId() {
-        return id;
-    }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+    public Set<Category> getCategories() {
+		return categories;
+	}
 
+	public void setCategories(Set<Category> categories) {
+		this.categories = categories;
+	}
+
+    public Difficulty getDifficulty() {
+		return difficulty;
+	}
+
+	public void setDifficulty(Difficulty difficulty) {
+		this.difficulty = difficulty;
+	}
     public String getDescription() {
         return description;
     }
@@ -131,13 +140,13 @@ public class Recipe {
     public void setNotes(Notes notes) {
     	if (notes != null) {
             this.notes = notes;
-            notes.setRecipe(this);
+            //notes.setRecipe(this);
         }
     }
     
     public Recipe addIngredient(Ingredient ingredient) {
 		this.ingredients.add(ingredient);
-		ingredient.setRecipe(this);
+		//ingredient.setRecipe(this);
 		return this;
 	}
 }

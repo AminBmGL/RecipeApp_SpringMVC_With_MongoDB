@@ -13,7 +13,7 @@ import insat.gl.recipies.domain.Category;
 
 public class CategoryToCategoryCommandTest {
 
-    public static final Long ID_VALUE = new Long(1L);
+    public static final String ID_VALUE = new String("123");
     public static final String DESCRIPTION = "descript";
     CategoryToCategoryCommand convter;
 
